@@ -1,0 +1,35 @@
+# /etc/systemd/system/digital_shop_bot.service
+
+[Unit]
+Description=Digital Shop Telegram Bot
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=botuser
+Group=botuser
+
+# مسیر اصلی پروژه
+WorkingDirectory=/opt/digital_shop_bot
+
+# مسیر اجرای برنامه
+Environment=PATH=/opt/digital_shop_bot/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin
+ExecStart=/opt/digital_shop_bot/venv/bin/python main.py
+
+# تنظیمات راه‌اندازی مجدد
+Restart=always
+RestartSec=10
+
+# محدودیت‌های سیستمی
+MemoryLimit=500M
+CPUQuota=50%
+
+# تنظیمات امنیتی
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=full
+ProtectHome=yes
+
+[Install]
+WantedBy=multi-user.target

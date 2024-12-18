@@ -1,0 +1,40 @@
+# Core dependencies
+python-telegram-bot==20.8
+python-dotenv==1.0.0
+
+# Database
+asyncpg==0.29.0
+psycopg2-binary==2.9.9  # برای سیستم‌هایی که کتابخانه‌های PostgreSQL را ندارند
+
+# Crypto & Payment
+tronpy==0.2.8
+base58==2.1.1
+aiohttp==3.9.1
+cryptography==41.0.7
+
+# File handling
+python-magic==0.4.27
+Pillow==10.0.0  # برای کار با تصاویر
+aiofiles==23.2.1
+
+# Utilities
+pytz==2023.3
+pydantic==2.5.2
+ujson==5.8.0
+redis==5.0.1  # اختیاری - برای کش کردن
+APScheduler==3.10.4  # برای اجرای وظایف زمان‌بندی شده
+
+# Logging & Monitoring
+loguru==0.7.2
+
+# Development & Testing
+pytest==7.4.3
+pytest-asyncio==0.23.2
+pytest-cov==4.1.0
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+
+# Optional - for better performance
+uvloop==0.19.0; sys_platform != 'win32'  # فقط برای لینوکس/مک
+orjson==3.9.10
